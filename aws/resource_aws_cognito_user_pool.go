@@ -697,9 +697,9 @@ func resourceAwsCognitoUserPoolUpdate(d *schema.ResourceData, meta interface{}) 
 		}
 	}
 
-	if d.HasChange("auto_verified_attributes") {
-		params.AutoVerifiedAttributes = expandStringList(d.Get("auto_verified_attributes").(*schema.Set).List())
-	}
+	// if d.HasChange("auto_verified_attributes") {
+	params.AutoVerifiedAttributes = expandStringList(d.Get("auto_verified_attributes").(*schema.Set).List())
+	// }
 
 	if d.HasChange("device_configuration") {
 		configs := d.Get("device_configuration").([]interface{})
